@@ -37,6 +37,20 @@ func SampleSlice1() {
 
 	// add สมาชิกใน slice
 	numbers = append(numbers, 6)
-	fmt.Println("Numbers after adding 6:", numbers)
+	numbers = append(numbers, 7)
+	fmt.Println("Numbers after adding 6 and 7:", numbers)
+
+	// ตัด slice โดยใช้ slice operation
+	subSlice1 := numbers[1:4] // ตัด slice ตั้งแต่ index 1 ถึง 3 (ไม่รวม index 4)
+	subSlice2 := numbers[:3]  // ตัด slice ตั้งแต่ index 0 ถึง 2 (ไม่รวม index 3)
+	subSlice3 := numbers[2:]  // ตัด slice ตั้งแต่ index 2 ถึงสุดท้าย
+	fmt.Println("Sub-slice of numbers (index 1 to 3):", subSlice1)
+	// แสดง length
+	fmt.Println("Length of sub-slice 1:", len(subSlice1))
+	// แสดง capacity
+	fmt.Println("Capacity of sub-slice 1:", cap(subSlice1))
+
+	fmt.Println("Sub-slice of numbers (index 0 to 2):", subSlice2)
+	fmt.Println("Sub-slice of numbers (index 2 to end):", subSlice3)
 
 }
